@@ -59,7 +59,7 @@ kube-system Active 2m26s
 
 ## {{% heading "installOperator" %}}
 
-{{% include "armory-operator/installation.md" %}}
+{{% include "armory-operator/op-install-cluster.md" %}}
 
 ## Create a GCS service account
 
