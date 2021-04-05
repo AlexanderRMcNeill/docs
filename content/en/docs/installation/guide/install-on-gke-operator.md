@@ -8,7 +8,7 @@ description: >
   Use the Armory Operator to deploy Armory Enterprise for Spinnaker in your Google Kubernetes Engine (GKE) cluster.
 ---
 
-This guide contains instructions for installing Armory on a Google Kubernetes Engine (GKE) cluster using the [Armory Operator]({{< ref "armory-operator" >}}). Refer to the [Armory Operator Reference]({{< ref "operator-config" >}}) for manifest entry details.
+This guide contains instructions for installing Armory on a Google Kubernetes Engine (GKE) cluster using the [Armory Operator]({{< ref "armory-operator" >}}). Refer to the [Armory Operator Reference]({{< ref "op-config-manifest" >}}) for manifest entry details.
 
 > If you want to install Spinnaker<sup>TM</sup>, use the open source Operator, which you can download from its GitHub [repo](https://github.com/armory/spinnaker-operator).
 
