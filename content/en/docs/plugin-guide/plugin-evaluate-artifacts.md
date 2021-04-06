@@ -21,38 +21,38 @@ This plugin requires :
 
 ## Setup
 
-Add the following snippet to your Operator config, such as `spinnakerservice.yml`. Replace `<PLUGIN_VERSION>` with the version of the plugin that you want to use. Plugin versions can be found [here](#release-notes).
+Add the following snippet to your Spinnaker manifest, such as `spinnakerservice.yml`. Replace `<PLUGIN_VERSION>` with the version of the plugin that you want to use. Plugin versions can be found in the [Release notes section](#release-notes).
 
 ```yaml
-    spec:
-      spinnakerConfig:
-        profiles:
-          spinnaker:  
-            spinnaker:
-              extensibility:
-                plugins:
-                  Armory.EvaluateArtifactsPlugin:
-                    enabled: true
-                    version: <PLUGIN_VERSION> # Replace with the version you want to use
-                repositories:
-                  evaluateArtifacts:
-                    url: https://raw.githubusercontent.com/armory-plugins/evaluate-artifacts-releases/master/repositories.json
-          gate:
-            spinnaker:
-              extensibility:
-                deck-proxy:
+spec:
+  spinnakerConfig:
+    profiles:
+      spinnaker:  
+        spinnaker:
+          extensibility:
+            plugins:
+              Armory.EvaluateArtifactsPlugin:
+                enabled: true
+                version: <PLUGIN_VERSION> # Replace with the version you want to use
+            repositories:
+              evaluateArtifacts:
+                url: https://raw.githubusercontent.com/armory-plugins/evaluate-artifacts-releases/master/repositories.json
+      gate:
+        spinnaker:
+          extensibility:
+            deck-proxy:
+              enabled: true
+              plugins:
+                Armory.EvaluateArtifactsPlugin:
                   enabled: true
-                  plugins:
-                    Armory.EvaluateArtifactsPlugin:
-                      enabled: true
-                      version: <PLUGIN_VERSION> # Replace with the version you want to use
-    
+                  version: <PLUGIN_VERSION> # Replace with the version you want to use
+
 ```
 
-Then, deploy your updated Operator configuration using one of the following methods:
+Then, deploy your updated Spinnaker manifest using one of the following methods:
 
-- The `deploy.sh` script if you use the [Armory kustomize repo](https://github.com/armory/spinnaker-kustomize-patches) to help manage your Operator configurations
-- `kubectl -n <spinnaker-namespace> -f <operator-config>.yml​`
+- The `deploy.sh` script if you use the [Armory Kustomize repo](https://github.com/armory/spinnaker-kustomize-patches) to help manage your Operator configurations
+- `kubectl -n <spinnaker-namespace> -f <spinnakerservice-manifest>.yml​`
 
 ## Usage
 
@@ -61,7 +61,7 @@ To use the stage, perform the following steps:
 1. In the Armory Enterprise UI, navigate to the pipeline you want to modify.
 2. Add the stage called **Evaluate Artifacts** stage to your pipeline.
 3. Add an artifact to the stage.
-4. Enter your artifact definition. When entering the definition, you can use a SpEL expression to parameterize it. 
+4. Enter your artifact definition. When entering the definition, you can use a SpEL expression to parameterize it.
 
 ## Examples
 
